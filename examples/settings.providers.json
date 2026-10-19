@@ -1,0 +1,6 @@
+{
+  "model": {"provider": "openai_compatible", "endpoint": "http://127.0.0.1:1234/v1", "model": "replace-with-your-installed-model", "api_key_env": "BUYERFIND_LLM_KEY"},
+  "search": {"provider": "brave", "api_key_env": "BRAVE_SEARCH_API_KEY"},
+  "enrichment": {"provider": "hunter", "api_key_env": "HUNTER_API_KEY"},
+  "limits": {"companies": 100, "contacts": 50, "competitors": 15, "search_requests": 60, "model_calls": 180, "pages": 450, "domain_searches": 100, "email_verifications": 100}
+}

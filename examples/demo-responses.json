@@ -1,0 +1,10 @@
+{
+  "github": [
+    {"items": [
+      {"html_url": "https://github.com/example/demo/issues/1", "title": "Synthetic example: update says success but field stays unchanged", "body": "This is fictional demo data. Our MCP workflow updates a ticket status, but read-back shows the old value. We check every update by hand in staging.", "user": {"login": "demo-workflow-owner"}, "created_at": "2026-10-18T10:00:00Z", "updated_at": "2026-10-18T10:00:00Z", "state": "open"},
+      {"html_url": "https://github.com/example/demo/issues/2", "title": "Synthetic example: read-only search returns no results", "body": "This is fictional demo data. MCP search returns an empty list. No write operations are involved.", "user": {"login": "demo-search-user"}, "created_at": "2026-10-18T11:00:00Z", "state": "open"}
+    ]},
+    {"items": []}
+  ],
+  "hn": [{"hits": []}, {"hits": []}]
+}

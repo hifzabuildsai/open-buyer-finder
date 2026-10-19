@@ -1,0 +1,14 @@
+{
+  "name": "Fourgate",
+  "url": "https://github.com/hifzabuildsai/fourgate",
+  "description": "Independently verify contracted MCP writes by reading the system of record after a tool reports success.",
+  "target_customer": "Owners of agent workflows that perform consequential MCP writes and can evaluate one workflow in staging.",
+  "capabilities": ["Local stdio MCP guard", "Explicit per-tool contracts", "Independent read-back with PASS, FAIL and UNKNOWN"],
+  "exclusions": ["Remote MCP transport without a verified local stdio path", "Read-only search failures", "No identifiable workflow owner"],
+  "qualification_unknowns": ["Current recurring pain", "Current checking method", "Independent read-back access", "Staging evaluation permission", "Budget and decision authority"],
+  "queries": {
+    "github": ["MCP \"silently\" \"update\"", "MCP \"success\" \"not created\""],
+    "hn": ["MCP verification", "agent tool failure"]
+  },
+  "relevance_terms": ["MCP", "success", "persist", "write", "update", "read-back", "workflow"]
+}

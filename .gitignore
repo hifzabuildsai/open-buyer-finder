@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+.env
+runs/
+*.zip
+settings.private.json
+*.receipt.json
+*.lock

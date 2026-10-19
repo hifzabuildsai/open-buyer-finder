@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-19T20:14:43.740689+00:00",
+  "since": "2026-10-01",
+  "mode": "synthetic_demo",
+  "profile": {
+    "name": "Fourgate",
+    "url": "https://github.com/hifzabuildsai/fourgate",
+    "description": "Independently verify contracted MCP writes by reading the system of record after a tool reports success.",
+    "target_customer": "Owners of agent workflows that perform consequential MCP writes and can evaluate one workflow in staging.",
+    "capabilities": [
+      "Local stdio MCP guard",
+      "Explicit per-tool contracts",
+      "Independent read-back with PASS, FAIL and UNKNOWN"
+    ],
+    "exclusions": [
+      "Remote MCP transport without a verified local stdio path",
+      "Read-only search failures",
+      "No identifiable workflow owner"
+    ],
+    "qualification_unknowns": [
+      "Current recurring pain",
+      "Current checking method",
+      "Independent read-back access",
+      "Staging evaluation permission",
+      "Budget and decision authority"
+    ],
+    "queries": {
+      "github": [
+        "MCP \"silently\" \"update\"",
+        "MCP \"success\" \"not created\""
+      ],
+      "hn": [
+        "MCP verification",
+        "agent tool failure"
+      ]
+    },
+    "relevance_terms": [
+      "MCP",
+      "success",
+      "persist",
+      "write",
+      "update",
+      "read-back",
+      "workflow"
+    ]
+  },
+  "requests": [
+    {
+      "source": "github",
+      "query": "MCP \"silently\" \"update\"",
+      "url": "https://api.github.com/search/issues?q=MCP+%22silently%22+%22update%22+is%3Aissue+is%3Aopen+is%3Apublic+in%3Atitle%2Cbody+created%3A%3E%3D2026-10-01&per_page=20&sort=created&order=desc",
+      "status": "ok",
+      "returned": 2
+    },
+    {
+      "source": "github",
+      "query": "MCP \"success\" \"not created\"",
+      "url": "https://api.github.com/search/issues?q=MCP+%22success%22+%22not+created%22+is%3Aissue+is%3Aopen+is%3Apublic+in%3Atitle%2Cbody+created%3A%3E%3D2026-10-01&per_page=20&sort=created&order=desc",
+      "status": "ok",
+      "returned": 0
+    },
+    {
+      "source": "hn",
+      "query": "MCP verification",
+      "url": "https://hn.algolia.com/api/v1/search_by_date?query=MCP+verification&hitsPerPage=20&numericFilters=created_at_i%3E%3D1790812800",
+      "status": "ok",
+      "returned": 0
+    },
+    {
+      "source": "hn",
+      "query": "agent tool failure",
+      "url": "https://hn.algolia.com/api/v1/search_by_date?query=agent+tool+failure&hitsPerPage=20&numericFilters=created_at_i%3E%3D1790812800",
+      "status": "ok",
+      "returned": 0
+    }
+  ],
+  "warnings": [],
+  "complete": true,
+  "retrieved_count": 2,
+  "items": [
+    {
+      "id": "b6046fc2447dd61e",
+      "source": "github",
+      "url": "https://github.com/example/demo/issues/1",
+      "author": "demo-workflow-owner",
+      "profile_url": "https://github.com/demo-workflow-owner",
+      "title": "Synthetic example: update says success but field stays unchanged",
+      "text": "This is fictional demo data. Our MCP workflow updates a ticket status, but read-back shows the old value. We check every update by hand in staging.",
+      "published_at": "2026-10-18T10:00:00Z",
+      "updated_at": "2026-10-18T10:00:00Z",
+      "state": "open",
+      "decision": "unreviewed",
+      "queries": [
+        "MCP \"silently\" \"update\""
+      ],
+      "matched_terms": [
+        "MCP",
+        "success",
+        "update",
+        "read-back",
+        "workflow"
+      ]
+    },
+    {
+      "id": "fa800c448643897c",
+      "source": "github",
+      "url": "https://github.com/example/demo/issues/2",
+      "author": "demo-search-user",
+      "profile_url": "https://github.com/demo-search-user",
+      "title": "Synthetic example: read-only search returns no results",
+      "text": "This is fictional demo data. MCP search returns an empty list. No write operations are involved.",
+      "published_at": "2026-10-18T11:00:00Z",
+      "updated_at": null,
+      "state": "open",
+      "decision": "unreviewed",
+      "queries": [
+        "MCP \"silently\" \"update\""
+      ],
+      "matched_terms": [
+        "MCP",
+        "write"
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "b6046fc2447dd61e",
+      "source_url": "https://github.com/example/demo/issues/1",
+      "decision": "potential_fit",
+      "evidence_quote": "Our MCP workflow updates a ticket status, but read-back shows the old value.",
+      "reason": "In this fictional example, a write reports success while the stored value remains unchanged. That matches the example product's verification problem. Technical compatibility and willingness to evaluate are inferences requiring discovery.",
+      "unknowns": [
+        "Local stdio compatibility",
+        "Access to an independent read-back",
+        "Recurring need",
+        "Budget and decision authority"
+      ],
+      "next_question": "Can you reproduce this write in staging and independently read its stored result?"
+    },
+    {
+      "id": "fa800c448643897c",
+      "source_url": "https://github.com/example/demo/issues/2",
+      "decision": "not_fit",
+      "evidence_quote": "MCP search returns an empty list. No write operations are involved.",
+      "reason": "This fictional example describes read-only retrieval. The example product verifies writes, so sharing MCP terminology does not establish fit.",
+      "unknowns": [
+        "Whether this person has a separate consequential write workflow"
+      ],
+      "next_question": "No outreach suggested on this evidence."
+    }
+  ],
+  "feedback": [],
+  "reviewed_at": "2026-10-19T20:16:36.305053+00:00",
+  "reviewer": "coding-agent"
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "b6046fc2447dd61e",
+    "source_url": "https://github.com/example/demo/issues/1",
+    "decision": "potential_fit",
+    "evidence_quote": "Our MCP workflow updates a ticket status, but read-back shows the old value.",
+    "reason": "In this fictional example, a write reports success while the stored value remains unchanged. That matches the example product's verification problem. Technical compatibility and willingness to evaluate are inferences requiring discovery.",
+    "unknowns": ["Local stdio compatibility", "Access to an independent read-back", "Recurring need", "Budget and decision authority"],
+    "next_question": "Can you reproduce this write in staging and independently read its stored result?"
+  },
+  {
+    "id": "fa800c448643897c",
+    "source_url": "https://github.com/example/demo/issues/2",
+    "decision": "not_fit",
+    "evidence_quote": "MCP search returns an empty list. No write operations are involved.",
+    "reason": "This fictional example describes read-only retrieval. The example product verifies writes, so sharing MCP terminology does not establish fit.",
+    "unknowns": ["Whether this person has a separate consequential write workflow"],
+    "next_question": "No outreach suggested on this evidence."
+  }
+]

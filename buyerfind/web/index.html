@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="studio-token" content="__STUDIO_TOKEN__">
+  <title>Open Buyer Finder · Research Studio</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="Open Buyer Finder home"><span class="brand-mark">o<span>↗</span></span><span>open buyer<br><strong>finder</strong></span></a>
+    <div class="side-kicker">FOUNDER WORKSPACE</div>
+    <div class="workspace-tag"><span class="status-dot"></span> Local research studio <span class="version">v2</span></div>
+    <label class="side-label" for="run-picker">RESEARCH HISTORY</label>
+    <select id="run-picker"><option value="">Start a new research run</option></select>
+    <div class="sidebar-bottom"><span class="small-mark">↗</span><p>Better context.<br>More relevant conversations.</p><div class="local-note">Runs stay on this machine.<br>Research uses your configured providers.</div></div>
+  </aside>
+  <div class="shell">
+    <header class="topbar"><div><span class="breadcrumb">Workspace</span><span class="slash">/</span>Research studio</div><div class="top-pills"><span class="pill neutral">OPEN SOURCE</span><span class="local-label"><span class="status-dot"></span>Local workspace</span></div></header>
+    <main>
+      <section class="intro" id="intro">
+        <div class="eyebrow"><span class="tiny-line"></span> FROM YOUR PRODUCT TO YOUR PEOPLE</div>
+        <h1>Find the companies.<br><span>Understand the fit.</span></h1>
+        <p class="intro-copy">Turn your product website into a research pack with company evidence, relevant people, and outreach drafts you can review.</p>
+        <form id="research-form" class="url-form">
+          <label class="sr-only" for="product-url">Your product website URL</label>
+          <span class="url-icon" aria-hidden="true">↗</span>
+          <input id="product-url" type="url" placeholder="https://your-product.com" required autocomplete="url" spellcheck="false">
+          <button class="primary" type="submit" id="research-button">Research website <span aria-hidden="true">→</span></button>
+        </form>
+        <div class="form-foot"><span>Uses the providers and request limits in your local settings.</span><button id="demo-button" class="text-button" type="button">Explore fictional demo <span aria-hidden="true">↗</span></button></div>
+      </section>
+
+      <div id="notice" class="notice" role="status" hidden></div>
+      <section class="provider-strip" aria-label="Research provider settings">
+        <div class="provider-heading"><span class="eyebrow">RESEARCH SETUP</span><span class="muted">Configured locally</span></div>
+        <div id="provider-list" class="provider-list"><span class="muted">Loading provider settings…</span></div>
+        <details class="budget-detail"><summary>Usage limits <span aria-hidden="true">⌄</span></summary><div id="usage-limits"></div><p class="muted">A configured provider is not a tested connection. Paid provider usage follows your own account and limits.</p></details>
+      </section>
+
+      <section id="empty-state" class="empty-state">
+        <div class="empty-art" aria-hidden="true"><div class="art-line"></div><div class="art-card"><span class="art-icon">↗</span><i></i><i></i><i></i></div><div class="art-chip">SOURCE → FIT → OUTREACH</div></div>
+        <div><div class="eyebrow">A RESEARCH PACK, WITH RECEIPTS</div><h2>A clearer starting point for sales.</h2><p>See who could fit, what supports that judgment, and what still needs checking. Every run keeps missing data visible.</p><div class="empty-tags"><span>Companies & people</span><span>Competitor context</span><span>Campaign drafts</span></div></div>
+      </section>
+
+      <section id="results" hidden>
+        <div id="demo-banner" class="demo-banner" hidden>FICTIONAL DEMO <span>Sample companies and contacts demonstrate the workflow. They are not real prospects.</span></div>
+        <div class="results-heading"><div><div class="eyebrow">YOUR RESEARCH PACK</div><h2 id="product-name">Research in progress</h2><p id="product-description"></p></div><div class="heading-actions"><span id="run-status" class="pill"></span><button id="download-button" class="secondary" type="button">↓ Download CSV</button></div></div>
+        <div id="progress-panel" class="progress-panel" hidden><span class="spinner"></span><div><strong id="progress-title">Researching your product</strong><span id="progress-detail">Evidence will appear as each stage finishes.</span></div><span class="pill neutral">LIVE PROGRESS</span></div>
+
+        <section class="metrics" aria-label="Research target progress">
+          <div class="metric main-metric"><span class="metric-label">FULLY ENRICHED COMPANIES</span><div class="metric-value"><strong id="enriched-count">0</strong><span>/ <span id="company-target">100</span></span></div><div class="meter"><div id="enriched-meter"></div></div><span class="metric-note">Outreach-ready + supported LinkedIn & tech stack</span></div>
+          <div class="metric"><span class="metric-label">COMPANIES FOUND</span><div class="metric-value"><strong id="company-count">0</strong></div><span class="metric-note" id="supported-count">0 source-supported</span></div>
+          <div class="metric"><span class="metric-label">PEOPLE</span><div class="metric-value"><strong id="people-count">0</strong><span id="people-target">/ 30–50</span></div><span class="metric-note" id="email-count">0 verified emails</span></div>
+          <div class="metric"><span class="metric-label">COMPETITORS</span><div class="metric-value"><strong id="competitor-count">0</strong><span id="competitor-target">/ 15</span></div><span class="metric-note">Direct + adjacent</span></div>
+          <div class="metric"><span class="metric-label">DRAFT SEQUENCES</span><div class="metric-value"><strong id="sequence-count">0</strong><span id="sequence-target">/ 18</span></div><span class="metric-note" id="segment-count">0 segments</span></div>
+        </section>
+        <div class="research-disclaimer">Counts describe research coverage. Fit, budget, purchase intent, and campaign conversion still need founder validation.</div>
+
+        <nav class="tabs" aria-label="Research views">
+          <button data-view="overview" class="active" aria-pressed="true">Overview</button>
+          <button data-view="companies" aria-pressed="false">Companies <span id="tab-companies">0</span></button>
+          <button data-view="people" aria-pressed="false">People <span id="tab-people">0</span></button>
+          <button data-view="competitors" aria-pressed="false">Competitors</button>
+          <button data-view="campaigns" aria-pressed="false">Campaigns</button>
+          <button data-view="signals" aria-pressed="false">Signals</button>
+        </nav>
+        <div class="view-tools" id="view-tools" hidden><label class="search-box"><span aria-hidden="true">⌕</span><input id="table-search" placeholder="Search this view" aria-label="Search this view"></label><label class="sr-only" for="segment-filter">Filter by segment</label><select id="segment-filter"><option value="">All segments</option></select><span id="view-count" class="muted"></span></div>
+        <div id="view-content" class="view-content"></div>
+        <details id="warnings-panel" class="warnings-panel" hidden><summary id="warnings-heading">Research notes</summary><ul id="warnings-list"></ul></details>
+        <footer class="report-footer"><span id="run-stamp"></span><span>Source-supported ≠ confirmed buyer · All outreach copy is draft</span></footer>
+      </section>
+    </main>
+    <footer class="app-footer"><span>Open Buyer Finder</span><span>Your research. Your providers. Your next conversation.</span><span>No messages are sent from this studio.</span></footer>
+  </div>
+  <dialog id="evidence-dialog"><div class="dialog-header"><div><span class="eyebrow">SOURCE & CONTEXT</span><h2 id="evidence-title"></h2></div><button id="close-dialog" class="icon-button" aria-label="Close evidence">×</button></div><div id="evidence-content"></div></dialog>
+</body>
+</html>

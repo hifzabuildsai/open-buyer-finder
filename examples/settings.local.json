@@ -1,0 +1,8 @@
+{
+  "model": {"provider": "ollama", "endpoint": "http://127.0.0.1:11434", "model": "qwen3:8b", "api_key_env": "BUYERFIND_LLM_KEY"},
+  "search": {"provider": "searxng", "endpoint": "http://127.0.0.1:8080", "api_key_env": "BRAVE_SEARCH_API_KEY"},
+  "enrichment": {"provider": "public", "api_key_env": "HUNTER_API_KEY"},
+  "limits": {"companies": 100, "contacts": 50, "competitors": 15, "search_requests": 60, "model_calls": 180, "pages": 450, "domain_searches": 100, "email_verifications": 100},
+  "trigger_window_days": 90,
+  "company_urls": []
+}
